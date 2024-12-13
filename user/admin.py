@@ -4,7 +4,7 @@ from django.contrib.auth.admin import UserAdmin
 from .models import User
 
 
-class UserAdmin(ModelAdmin):
+class CustomUserAdmin(ModelAdmin):
     """Define admin model for custom User model with no email field."""
 
     fieldsets = (
@@ -25,4 +25,5 @@ class UserAdmin(ModelAdmin):
     search_fields = ("email", "first_name", "last_name")
     ordering = ("email",)
 
-admin.site.register(User, UserAdmin)
+
+admin.site.register(User, CustomUserAdmin)
